@@ -1,5 +1,3 @@
-from scipy import constants as phys_const
-
 ### Values from LED data sheet
 ### https://download.luminus.com/datasheets/Luminus_XST-3535-UV_Datasheet.pdf
 wave_length = 275. #nm

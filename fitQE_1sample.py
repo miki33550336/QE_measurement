@@ -4,7 +4,7 @@ from scipy.optimize import curve_fit
 import numpy as np
 from scipy import constants as phys_const
 
-import consts
+import configs
 from calc_nphotons import n_photons
 
 def model_curve(t, A, C):
@@ -27,6 +27,8 @@ def main(args):
     voltage_err = voltage_sideband.std()
     if voltage_err > 1:
         print("Warning: Uncertainty of voltage is",voltage_err,". Please check if it is correct")
+    if args.verbose:
+        print("Noise std =",voltage_err)
 
     t0 = 10 #fit lower
     t1 = 90 #fit upper
@@ -69,8 +71,8 @@ def main(args):
              color="red")
 
     # QE calculation
-    signal_charge = fit_params[0] * consts.pulse_length * 1.0E-3 \
-                    / consts.postamp_gain / consts.CSAgain #pC
+    signal_charge = fit_params[0] * configs.pulse_length * 1.0E-3 \
+                    / configs.postamp_gain / configs.CSAgain #pC
     n_pe = signal_charge *1.0E-12 / phys_const.elementary_charge
     QE = n_pe / n_photons
     if args.verbose:
