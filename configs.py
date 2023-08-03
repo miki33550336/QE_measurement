@@ -11,5 +11,6 @@ postamp_gain = 2.93 #V/V
 ### Setup configuration
 pulse_current = 727 #mA
 pulse_length = 100 #us
-dist_LED_cathod = 12 #mm
+#dist_LED_cathod = 12 #mm #old_setup
+dist_LED_cathod = 7.7 #mm
 window_diameter = 7 #mm
