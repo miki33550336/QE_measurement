@@ -30,3 +30,5 @@ angle_factor = integrate_2d(opening_angle) / integrate_2d(90)
 pulse_energy = configs.pulse_current * configs.efficiency_min * 1.0E-3 * configs.pulse_length * 1.0E-6 #J
 photon_energy = phys_const.h * phys_const.c / (configs.wave_length * 1.0E-9) #J
 n_photons = pulse_energy * angle_factor / photon_energy
+if __name__ == '__main__':
+    print("distance:",configs.dist_LED_cathod,"mm,  n_photons:","{:.2e}".format(n_photons))

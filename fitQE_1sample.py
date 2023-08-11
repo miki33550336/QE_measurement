@@ -48,6 +48,9 @@ def main(args):
     ndf = len(time_fit) - len(fit_params)
     reduced_chi_squared = chi_squared / ndf
 
+    if reduced_chi_squared > 1.5:
+        print("Warning: χ²/ndf is",reduced_chi_squared)
+
     if args.verbose:
         print("Fitted Parameters:")
         print(" Signal slope :", round(fit_params[0], 5), "±", round(fit_param_errs[0],5), "mV/us")
