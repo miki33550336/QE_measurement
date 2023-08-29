@@ -11,7 +11,7 @@ if __name__ == '__main__':
                         help = 'CSV data obtained with oscilloscope')
     parser.add_argument('--plot', '-p',
                         type = str,
-                        help = '\'f\': Save fit result plot to plots/ directory,\n \
+                        help = '\'f\': Save fit result plot to Plots/ directory,\n \
                                 \'s\': Show plot in window')
     args = parser.parse_args()
 
